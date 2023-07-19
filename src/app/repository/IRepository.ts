@@ -1,16 +1,16 @@
 /////////////////////////////////////
-interface IRepository {
+interface IRepository <T> {
 
     Init(): void
     
-    getAll(): void
+    getAll(): T[]
     /* Crud */
-    Create(): void
-    Read(): void
-    Update(): void
+    Create( item : T ): boolean
+    Read(): T
+    Update(): boolean
     Delete(): boolean
     /* */
-    Query(): void
+    Query(): T[]
 }
 /////////////////////////////////////
 export default IRepository
